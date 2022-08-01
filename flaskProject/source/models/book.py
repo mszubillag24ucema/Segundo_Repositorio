@@ -1,5 +1,5 @@
 class Book:
-    def __init__(self,ISBN, title, author, price, published, language, number_pages, press, ranking):
+    def __init__(self, ISBN, title, author, price, published, language, number_pages, press, ranking):
         self.ISBN = ISBN
         self.title = title
         self.author = author
@@ -10,7 +10,27 @@ class Book:
         self.press = press
         self.ranking = ranking
 
+    def serialize(self):
+        # para convertirlo en diccionario y poder aplicarle el jsonify
+        return {
+            'ISBN': self.ISBN,
+            'title': self.title,
+            'author': self.author,
+            'price': self.price
+        }
 
+    def serialize_details(self):
+        return {
+            'ISBN': self.ISBN,
+            'title': self.title,
+            'author': self.author,
+            'price': self.price,
+            'published': self.published,
+            'language': self.language,
+            'number_pages': self.number_pages,
+            'press': self.press,
+            'ranking': self.ranking
+        }
 
 
 
